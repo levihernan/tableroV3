@@ -63,7 +63,8 @@ h1, h2, tspan, text, a {
 }
 #ultimosDatosTable     tr:first-child   td {
   border: solid 1px #fff;
-  line-height: 1.2em
+  line-height: 1.2em;
+  padding: 4px;
 }
 
 #ultimosDatosTable     tr:nth-child(odd) {
