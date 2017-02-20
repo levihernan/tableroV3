@@ -26,6 +26,7 @@ dataset = [
         ejeY: "Miles de USD$", //Referencia para el eje Y max 20 char
         simboloUnidad: "k USD$" //Indicador para el mouseover del gráfico "134.5k USD$""
         variacion: true, //Si el gráfico cuenta con variacion o no
+        variacionPorcentual: true //Si la variación lleva un valor porcentual o por unidades
         fuente: "INDEC", //String
         descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." //String max 400 char
         serie: [[/*tiempo*/],[/*valor*/],[/*variacion*/]]
