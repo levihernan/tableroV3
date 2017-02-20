@@ -5,6 +5,9 @@ html, body {
   /*height:100%;
   overflow:auto*/
 }
+::-webkit-scrollbar {
+    width: 0px;
+}
 #headerMinisterio{
   position: fixed;
   top: 0;
