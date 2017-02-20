@@ -101,8 +101,8 @@
 		top: 80px;
 		left: 50%;
 		transform: translateX(-50%);
-		margin-left: -1px;
-		width: 80%;
+		margin-left: -151px;
+		width: Calc( 80% - 240px);
 }
 .opacity1{
 		opacity: 1 !important;

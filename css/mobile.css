@@ -3,8 +3,10 @@ html{
 }
 @media ( max-width: 1169px ) {
   #tableroFloatingHeader{
-    width: Calc( 90% + 30px ) !important;
+    width: Calc( 90% + 0px ) !important;
     //box-shadow: 0 0 40px -15px #000;
+    margin-left: -1px !important;
+    top: 50px !important;
   }
 
   #tableroContainer{
