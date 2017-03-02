@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="css/headerMinisterio.css">
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/dropdown.css"> <!-- Resource style -->
+    <!-- <link rel="stylesheet" href="css/dropdown.css"> --> <!-- Resource style -->
     <link rel="stylesheet" href="css/charts.css">
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/collapsedTable.css">
-    <link rel="stylesheet" type="text/css" href="css/table-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/beta-table.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 
@@ -73,29 +73,34 @@
       <a href="#" data-activates="slide-out" class="button-collapse burger-button"><i class="material-icons">menu</i></a>
     </header>
     <div class="tituloPrograma">
-      <h1>Tablero de la Economía Real</h1>
+      <h1>Tablero de la Economía Real
+  		<i class="printButton hidden-xs fa fa-print" aria-hidden="true" onclick="htmlprint()"></i></h1>
     </div>
-    <table id="tableroFloatingHeader" class="tablero">
-			<thead>
-				<tr>
-					<td rowspan="2" id="headerIndicador" style="width:30% !important">Indicador</td>
-					<td rowspan="2" id="headerUnidad" style="width:10% !important">Unidad</td>
-					<td colspan="3" style="width:30%">Último dato disponible</td>
-					<td colspan="3" style="width:30%">Acumulado</td>
-				</tr>
-				<tr>
-					<td style="width:10%">Período</td>
-					<td style="width:10%">Valor</td>
-					<td style="width:10%">Variación i.a.</td>
-					<td style="width:10%">Período</td>
-					<td style="width:10%">2016</td>
-					<td style="width:10%">Var. 16/15</td>
-				</tr>
-			</thead>
-		</table>
+    <div class="floatingHeaderContainer">
+      <div class="paddingContainer">
+      <table id="tableroFloatingHeader" class="tablero">
+  			<thead>
+  				<tr>
+  					<td rowspan="2" id="headerIndicador" style="width:30% !important">Indicador</td>
+  					<td rowspan="2" id="headerUnidad" style="width:10% !important">Unidad</td>
+  					<td colspan="3" style="width:30%">Últimos datos</td>
+  					<td colspan="3" style="width:30%">Acumulado</td>
+  				</tr>
+  				<tr>
+  					<td style="width:10%">Período</td>
+  					<td style="width:10%">Valor</td>
+  					<td style="width:10%">Variación i.a.</td>
+  					<td style="width:10%">Período</td>
+  					<td style="width:10%">Valor</td>
+  					<td style="width:10%">Variación</td>
+  				</tr>
+  			</thead>
+  		</table>
+    </div>
+    </div>
 
     <nav class="no-display">
-    <ul id="slide-out" class="side-nav fixed">
+      <ul id="slide-out" class="side-nav fixed">
       <li><a href="http://www.produccion.gob.ar/portal-de-datos-interno/" target="_blank"><i class="material-icons">language</i>Portal de Datos</a></li>
       <li><a class="waves-effect" href="#" onclick="closeNav();toggleTablero();"><i class="material-icons">assignment</i>Tablero</a></li>
       <li><div class="divider"></div></li>
@@ -176,9 +181,9 @@
             <div class="collapsible-body">
               <ul>
                 <li><a class="waves-effect" href="#" onclick="toggleSeries();drawCharts(1);">Exportaciones</a></li>
-  							<li><a class="waves-effect" href="#" onclick="toggleSeries();drawCharts(2);">Exportaciones var.</a></li>
+  							<li><a class="waves-effect" href="#" onclick="toggleSeries();drawCharts(2);">Exportaciones (Cantidades)</a></li>
   							<li><a class="waves-effect" href="#" onclick="toggleSeries();drawCharts(3);">Importaciones</a></li>
-  							<li><a class="waves-effect" href="#" onclick="toggleSeries();drawCharts(4);">Importaciones var.</a></li>
+  							<li><a class="waves-effect" href="#" onclick="toggleSeries();drawCharts(4);">Importaciones (Cantidades)</a></li>
   							<li><a class="waves-effect" href="#" onclick="toggleSeries();drawCharts(5);">Balanza Comercial</a></li>
   							<li><a class="waves-effect" href="#" onclick="toggleSeries();drawCharts(6);">Precio de la Soja</a></li>
                 <!-- SERIES NUEVAS -->
@@ -238,7 +243,7 @@
         </ul>
       </li>
     </ul>
-  </nav>
+    </nav>
 
   <main class="cd-main-content padding-right">
   		<!-- your content here -->
@@ -258,60 +263,31 @@
   			</div>
 
   			<div id="tableroContainer">
-  				<div role="main" class="ui-content collapsedTablero" style="display:none" id="collapsedTableroContainer">
-  					<h2>Sector Real</h2>
-  					<div id="realMobile"></div>
-  					<h2>Inversión</h2>
-  					<div id="inversionMobile"></div>
-  					<h2>Consumo</h2>
-  					<div id="consumoMobile"></div>
-  					<h2>Sector Externo</h2>
-  					<div id="externoMobile"></div>
-  					<h2>Precios</h2>
-  					<div id="preciosMobile"></div>
-  					<h2>Monetario</h2>
-  					<div id="monetarioMobile"></div>
-  					<h2>Fiscal</h2>
-  					<div id="fiscalMobile"></div>
+  				<div role="main" style="" class="ui-content spreadedTablero" id="collapsedTableroContainer">
+            <table id="desktopTable">
+             <thead class="tableHead">
+               <tr>
+                 <td rowspan="2">Indicador</td>
+                 <td rowspan="2">Unidad</td>
+                 <td colspan="3">Últimos Datos</td>
+                 <td colspan="3">Acumulado</td>
+               </tr>
+               <tr>
+                 <td>Período</td>
+                 <td>Valor</td>
+                 <td>Variacion</td>
+                 <td>Período</td>
+                 <td>Valor</td>
+                 <td>Variacion</td>
+               </tr>
+             </thead>
+            </table>
   				</div>
 
 
-  				<div class="spreadedTablero"><!--Div que desaparece al achicarse la pantalla -->
+  				<div id="mobileTable" class="collapsedTablero" style="display:none">
 
-  					<table id="" class="tablero">
-  						<thead>
-  							<tr>
-  								<td rowspan="2" id="headerIndicador" style="width:30% !important">Indicador</td>
-  								<td rowspan="2" id="headerUnidad" style="width:10% !important">Unidad</td>
-  								<td colspan="3" style="width:30%">Último dato disponible</td>
-  								<td colspan="3" style="width:30%">Acumulado</td>
-  							</tr>
-  							<tr>
-  								<td style="width:10%">Período</td>
-  								<td style="width:10%">Valor</td>
-  								<td style="width:10%">Variación i.a.</td>
-  								<td style="width:10%">Período</td>
-  								<td style="width:10%">2016</td>
-  								<td style="width:10%">Var. 16/15</td>
-  							</tr>
-  						</thead>
-  						<tbody>
-  							<tr><td class="subtitulo" colspan="8">Sector real</td></tr>
-  							<tr><td id="sectorReal" class="innerTable" colspan="8"></td></tr>
-  							<tr><td class="subtitulo"  colspan="8">Inversión</td></tr>
-  							<tr><td id="inversion" class="innerTable" colspan="8"></td></tr>
-  							<tr><td class="subtitulo" colspan="8">Consumo</td></tr>
-  							<tr><td id="consumo" class="innerTable" colspan="8"></td></tr>
-  							<tr><td class="subtitulo" colspan="8">Sector externo</td></tr>
-  							<tr><td id="sectorExterno" class="innerTable" colspan="8"></td></tr>
-  							<tr><td class="subtitulo"  colspan="8">Precios</td></tr>
-  							<tr><td id="precios" class="innerTable" colspan="8"></td></tr>
-  							<tr><td class="subtitulo"  colspan="8">Monetario</td></tr>
-  							<tr><td id="monetario" class="innerTable" colspan="8"></td></tr>
-  							<tr><td class="subtitulo"  colspan="8">Fiscal</td></tr>
-  							<tr><td id="fiscal" class="innerTable" colspan="8"></td></tr>
-  						</tbody>
-  					</table>
+
 
   				</div>
   				<div class="aclaraciones">

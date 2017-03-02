@@ -18,7 +18,7 @@ dataset = [
           variacion: -7 //Número que se le agregará el símbolo porcentual %
         ],
         flecha: true, //Indicador de si la variación despliega flecha verde/roja o no
-        invertirFlecha:false //Indicador de si flecha verde cuando valor decrece (como en Desempleo)
+        invertirFlecha: false //Indicador de si flecha verde cuando valor decrece (como en Desempleo)
       },
       serie: {
         titulo: "Producción Automotriz", //Título para la pantalla de serie max 50 char

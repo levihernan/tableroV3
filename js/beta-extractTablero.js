@@ -59,7 +59,7 @@ function mobileTabulate() {
       tableRow += "<tr class='mobileData'><td class='halfwidth'>Valor</td><td class='halfwidth'>" + datasetTablero[i].val_2016 + "</td></tr>";
       tableRow += "<tr class='mobileData'><td class='halfwidth'>Variación IA</td><td class='halfwidth'>" + datasetTablero[i].var_16_15 + "</td></tr></tbody>";
     } else {
-      tableRow = "</table><table class='mobileTable' id='"+ datasetTablero[i].periodo_ud +"'><tr class='mobileCategoria'><td>" + datasetTablero[i].unidad + "</td></tr>";
+      tableRow = "</table><table id='"+ datasetTablero[i].periodo_ud +"'><tr class='mobileCategoria'><td>" + datasetTablero[i].unidad + "</td></tr>";
     }
     tableData += tableRow;
   }

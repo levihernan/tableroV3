@@ -49,6 +49,7 @@ html{
     }
     #tableroContainer{
       width: 100% !important;
+      transition: all ease 0.5s;
     }
     #collapsedTableroContainer tr:first-child td{
       margin-top: 0
@@ -67,7 +68,7 @@ html{
     }
   }
 
-  @media ( max-width: 950px ) {
+  @media ( max-width: 993px ) {
     #tableroContainer thead td{
       font-size: 10px !important;
       line-height: 12px !important;
@@ -78,5 +79,8 @@ html{
     }
     .aclaraciones{
       font-size: 10px;
+    }
+    .printButton{
+      display: none !important;
     }
   }
