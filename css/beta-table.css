@@ -16,6 +16,7 @@
   z-index: 100;
 	top: 70px;
 	user-select: none;
+	opacity: .8;
 }
 .opacity1{
 	opacity: 1 !important
