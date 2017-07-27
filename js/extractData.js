@@ -1,4 +1,4 @@
-var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1-2xDXIx_hdcvEETsDXm40ei-CB7x0E9nn2YCOPS1qQg/pubhtml'; //Funciona
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1x7wHb9BFWzC_RC1eGWqOATzf0fYkfdisKETWshmTc5U/pubhtml'; //Funciona
 
 var date = [];
 var series = {date:[], exportaciones:[], exportaciones_var:[], importaciones:[], importaciones_var:[], balance:[],
